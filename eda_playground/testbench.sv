@@ -140,9 +140,9 @@ module tb_uart;
         bit result;
         
         $display("");
-        $display("=".repeat(60));
+        $display("============================================================");
         $display("         UART VERIFICATION - EDA PLAYGROUND");
-        $display("=".repeat(60));
+        $display("============================================================");
         $display("BAUD_DIV = %0d clocks per bit", BAUD_DIV);
         $display("");
         
@@ -152,9 +152,9 @@ module tb_uart;
         //=====================================================================
         // Test 1: Basic pattern tests (no parity, 1 stop)
         //=====================================================================
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         $display("TEST GROUP 1: Basic Patterns (No Parity)");
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         
         // Test alternating bits
         foreach ({8'hAA, 8'h55, 8'hA5, 8'h5A}[i]) begin
@@ -182,9 +182,9 @@ module tb_uart;
         //=====================================================================
         // Test 2: Even parity tests
         //=====================================================================
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         $display("TEST GROUP 2: Even Parity");
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         
         // Various patterns with even parity
         foreach ({8'h00, 8'hFF, 8'hAA, 8'h55, 8'h0F, 8'hF0, 8'h12, 8'h34}[i]) begin
@@ -197,9 +197,9 @@ module tb_uart;
         //=====================================================================
         // Test 3: Odd parity tests
         //=====================================================================
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         $display("TEST GROUP 3: Odd Parity");
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         
         // Various patterns with odd parity
         foreach ({8'h00, 8'hFF, 8'hAA, 8'h55, 8'h77, 8'h88, 8'hCD, 8'hEF}[i]) begin
@@ -212,9 +212,9 @@ module tb_uart;
         //=====================================================================
         // Test 4: Two stop bits
         //=====================================================================
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         $display("TEST GROUP 4: Two Stop Bits");
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         
         // No parity, 2 stop bits
         foreach ({8'hDE, 8'hAD, 8'hBE, 8'hEF}[i]) begin
@@ -240,9 +240,9 @@ module tb_uart;
         //=====================================================================
         // Test 5: Random values
         //=====================================================================
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         $display("TEST GROUP 5: Random Data");
-        $display("-".repeat(40));
+        $display("----------------------------------------");
         
         for (int i = 0; i < 10; i++) begin
             test_num++;
@@ -255,9 +255,9 @@ module tb_uart;
         // Final Summary
         //=====================================================================
         $display("");
-        $display("=".repeat(60));
+        $display("============================================================");
         $display("                    TEST SUMMARY");
-        $display("=".repeat(60));
+        $display("============================================================");
         $display("  Total Tests: %0d", test_num);
         $display("  PASSED:      %0d", pass_cnt);
         $display("  FAILED:      %0d", fail_cnt);
@@ -273,7 +273,7 @@ module tb_uart;
             $display("");
         end
         
-        $display("=".repeat(60));
+        $display("============================================================");
         $finish;
     end
     
